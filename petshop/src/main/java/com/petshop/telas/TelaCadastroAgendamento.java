@@ -1,13 +1,17 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package com.petshop.telas;
 
-/**
- *
- * @author eduar
- */
+import javafx.scene.Scene;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
 public class TelaCadastroAgendamento {
-    
+    public void mostrar(Stage ThirdScreen){
+        BorderPane root = new BorderPane();
+        
+        Scene scene = new Scene(root, 1000, 650);
+        
+        ThirdScreen.setTitle("Sistema de Gestão - Tela de Agendamento");
+        ThirdScreen.setScene(scene);
+        ThirdScreen.show();
+    }
 }

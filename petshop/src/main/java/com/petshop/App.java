@@ -1,6 +1,8 @@
 package com.petshop;
 
+import com.petshop.telas.TelaCadastroAgendamento;
 import com.petshop.telas.TelaCadastroCliente;
+import com.petshop.telas.TelaDeAnimais;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -15,16 +17,37 @@ public class App extends Application {
 
     @Override
     // Inicia a janela do Windows
-    public void start(Stage stage) {
+    public void start(Stage FirstScreen) {
         // Divide a janela em: topo, esquerda, Centro, Direita e Baixo
         BorderPane root = new BorderPane();
         
         // Criando botões de Menu no centro da janela 
         Button Produtos = new Button("Produtos");
         Button Agendamentos = new Button("Agendamentos");
+        //Ela serve para definir o que o programa deve fazer quando o usuário
+        //interage com um componente, por exemplo, quando clica em um botão
+        //ou pressiona uma tecla enter
+        Agendamentos.setOnAction(e -> {
+            TelaCadastroAgendamento CadastroAgendamento = new TelaCadastroAgendamento();
+            CadastroAgendamento.mostrar(FirstScreen);
+        });
         Button Vendas = new Button("Vendas");
         Button Clientes = new Button("Clientes");
+        //Ela serve para definir o que o programa deve fazer quando o usuário
+        //interage com um componente, por exemplo, quando clica em um botão
+        //ou pressiona uma tecla enter
+        Clientes.setOnAction(e -> {
+            TelaCadastroCliente CadastroCliente = new TelaCadastroCliente();
+            CadastroCliente.mostrar(FirstScreen);
+        });
         Button Animais = new Button("Animais");
+        //Ela serve para definir o que o programa deve fazer quando o usuário
+        //interage com um componente, por exemplo, quando clica em um botão
+        //ou pressiona uma tecla enter
+        Animais.setOnAction(e -> {
+            TelaDeAnimais telaanimais = new TelaDeAnimais();
+            telaanimais.mostrar(FirstScreen);
+        });
         
         //Definindo o tamanho de cada botão individualmente e estilizando
         Button[] botoes = {
@@ -53,9 +76,9 @@ public class App extends Application {
         Scene scene = new Scene(root, 1000, 650);
 
         // Configura o palco para inicializar as cenas
-        stage.setTitle("Sistema de Gestão - Meu PetShop");
-        stage.setScene(scene);
-        stage.show();
+        FirstScreen.setTitle("Sistema de Gestão - Meu PetShop");
+        FirstScreen.setScene(scene);
+        FirstScreen.show();
     }
 
     public static void main(String[] args) {

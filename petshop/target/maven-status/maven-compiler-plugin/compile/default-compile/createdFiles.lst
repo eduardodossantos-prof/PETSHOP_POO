@@ -1,3 +1,8 @@
+com\petshop\telas\TelaVendas.class
 com\petshop\App.class
 module-info.class
 com\petshop\telas\TelaCadastroCliente.class
+com\petshop\telas\Applcation.class
+com\petshop\telas\TelaProdutos.class
+com\petshop\telas\TelaCadastroAgendamento.class
+com\petshop\telas\TelaDeAnimais.class
